@@ -1,19 +1,17 @@
 // Modules
-import winston from 'winston'
-import moment from 'moment'
 import express from 'express'
 import morgan from 'morgan'
-import passport from 'passport'
 import bodyParser from 'body-parser'
 import methodOverride from 'method-override'
+import path from 'path'
 
 // Files
-//import constants from './constants'
-//import logger from './util/logger'
+import constants from './constants'
+import logger from './util/logger'
 
 // Configuration
 const app = express()
-app.use(express.static(__dirname + '/client'))
+app.use(express.static(path.join(__dirname, 'client')))
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ 'extended': 'true' }))
 app.use(bodyParser.json())
@@ -21,9 +19,8 @@ app.use(methodOverride())
 
 // Api
 
-
-
-const port = process.env.PORT || 5000
-app.listen(port)
+const PORT = process.env.PORT || 5000
+app.listen(PORT)
+logger.info(`Qargus started on port ${PORT}`)
 
 export default app
