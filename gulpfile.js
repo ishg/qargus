@@ -3,7 +3,6 @@
 var gulp = require('gulp')
 
 // Toolkit
-var clean = require('gulp-clean')
 // var filter = require('gulp-filter')
 // var print = require('gulp-print')
 var source = require('vinyl-source-stream')
@@ -15,6 +14,8 @@ var buffer = require('vinyl-buffer')
 var transform = require('vinyl-transform')
 var rename = require('gulp-rename')
 var envify = require('envify/custom')
+var rimraf = require('rimraf')
+var cache = require('gulp-cached')
 
 // Technologies
 var babel = require('gulp-babel')
@@ -36,19 +37,15 @@ var config = {
 // WORKFLOW
 /// /////////////////////////////////
 
-gulp.task('build', []) // TODO
+gulp.task('default', ['dist'])
+
+gulp.task('dist', ['clean'], function (done) {
+  gulp.start('js', 'html', 'sass')
+})
 
 gulp.task('serve', ['browser-sync', 'nodemon', 'watch'])
 
 gulp.task('watch', ['html:watch', 'js:watch', 'sass:watch'])
-
-gulp.task('dist', ['clean', 'js', 'html', 'sass'])
-
-gulp.task('clean', function (done) {
-  gulp.src('./dist', {read: false})
-    .pipe(clean({ force: true }))
-    .on('end', done)
-})
 
 /// /////////////////////////////////
 // Tools
@@ -62,8 +59,8 @@ gulp.task('nodemon', function (done) {
     env: { 'NODE_ENV': 'development' }
   }).on('start', function () {
     if (!started) {
-      done()
       started = true
+      done()
     }
   })
 })
@@ -74,6 +71,10 @@ gulp.task('browser-sync', function () {
     files: ['dist/client/**/*.*'],
     port: 7000
   })
+})
+
+gulp.task('clean', function (done) {
+  return rimraf('./dist', done)
 })
 
 /// /////////////////////////////////
@@ -101,6 +102,7 @@ gulp.task('js:server', function (done) {
     './src/**/*.js',
     '!./src/client/**/*.js'
   ])
+    .pipe(cache('server'))
     .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('./dist/'))
     .on('end', done)

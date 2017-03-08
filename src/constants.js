@@ -1,5 +1,4 @@
 const LOG_DIR = process.env.QARGUS_LOG_DIR
-console.log(LOG_DIR)
 
 module.exports = {
   APP_NAME: 'Qargus',
