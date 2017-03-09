@@ -4,18 +4,18 @@ var gulp = require('gulp')
 
 // Toolkit
 // var filter = require('gulp-filter')
-var print = require('gulp-print')
+// var print = require('gulp-print')
 var source = require('vinyl-source-stream')
 // var sourcemaps = require('gulp-sourcemaps')
 var concat = require('gulp-concat')
-var uglify = require('gulp-uglify')
+// var uglify = require('gulp-uglify')
 // var gutil = require('gulp-util')
 var buffer = require('vinyl-buffer')
 var transform = require('vinyl-transform')
 var rename = require('gulp-rename')
 var envify = require('envify/custom')
 var rimraf = require('rimraf')
-var cache = require('gulp-cached')
+// var cache = require('gulp-cached')
 
 // Technologies
 var babel = require('gulp-babel')

@@ -2521,14 +2521,6 @@ gulp-rename@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/gulp-rename/-/gulp-rename-1.2.2.tgz#3ad4428763f05e2764dec1c67d868db275687817"
 
-gulp-rimraf@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/gulp-rimraf/-/gulp-rimraf-0.2.1.tgz#9f1783adc5d4890d8a1bedf834bc989e2a565030"
-  dependencies:
-    gulp-util "^3.0.7"
-    rimraf "^2.5.4"
-    through2 "^2.0.1"
-
 gulp-sass@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/gulp-sass/-/gulp-sass-3.1.0.tgz#53dc4b68a1f5ddfe4424ab4c247655269a8b74b7"
@@ -2567,7 +2559,7 @@ gulp-uglify@^2.0.1:
     uglify-save-license "^0.4.1"
     vinyl-sourcemaps-apply "^0.2.0"
 
-gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.6, gulp-util@^3.0.7, gulp-util@^3.0.8:
+gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.6, gulp-util@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -3079,6 +3071,10 @@ joi@^6.10.1:
     moment "2.x.x"
     topo "1.x.x"
 
+jquery@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.1.1.tgz#347c1c21c7e004115e0a4da32cece041fad3c8a3"
+
 js-tokens@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.1.tgz#08e9f132484a2c45a30907e9dc4d5567b7f114d7"
@@ -3542,6 +3538,10 @@ map-stream@~0.1.0:
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
+
+medium-editor@^5.23.0:
+  version "5.23.0"
+  resolved "https://registry.yarnpkg.com/medium-editor/-/medium-editor-5.23.0.tgz#7d16c15cdf152b95ced2a583bf07203e8539a3c6"
 
 meow@^3.7.0:
   version "3.7.0"
@@ -4647,7 +4647,7 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@^2.2.8, rimraf@^2.5.4, rimraf@^2.6.1:
+rimraf@2, rimraf@^2.2.8, rimraf@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:
