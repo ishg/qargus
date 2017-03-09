@@ -4,7 +4,7 @@ var gulp = require('gulp')
 
 // Toolkit
 // var filter = require('gulp-filter')
-// var print = require('gulp-print')
+var print = require('gulp-print')
 var source = require('vinyl-source-stream')
 // var sourcemaps = require('gulp-sourcemaps')
 var concat = require('gulp-concat')
@@ -40,7 +40,7 @@ var config = {
 gulp.task('default', ['dist'])
 
 gulp.task('dist', ['clean'], function (done) {
-  gulp.start('js', 'html', 'sass')
+  gulp.start('js', 'html', 'sass', 'assets')
 })
 
 gulp.task('serve', ['browser-sync', 'nodemon', 'watch'])
@@ -55,7 +55,8 @@ gulp.task('nodemon', function (done) {
   var started = false
   nodemon({
     script: './dist/server.js',
-    ignore: ['./dist/client'],
+    ignore: ['dist/client/**'],
+    watch: ['dist'],
     env: { 'NODE_ENV': 'development' }
   }).on('start', function () {
     if (!started) {
@@ -102,7 +103,6 @@ gulp.task('js:server', function (done) {
     './src/**/*.js',
     '!./src/client/**/*.js'
   ])
-    .pipe(cache('server'))
     .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('./dist/'))
     .on('end', done)
@@ -113,7 +113,6 @@ function bundle (bundler) {
     .bundle()
     .pipe(source(config.js.src))
     .pipe(buffer())
-    .pipe(uglify())
     .pipe(rename(config.js.outputFile))
     .pipe(gulp.dest(config.js.outputDir))
 }
@@ -131,8 +130,14 @@ gulp.task('js:client', function () {
 
 gulp.task('js', ['js:server', 'js:client'])
 
-gulp.task('js:watch', function () {
-  gulp.watch('./src/**/*.js', ['js'])
+gulp.task('js:watch', ['js:watchserver', 'js:watchclient'])
+
+gulp.task('js:watchserver', function () {
+  gulp.watch(['./src/**/*.js', '!./src/client/**/*.js'], ['js:server'])
+})
+
+gulp.task('js:watchclient', function () {
+  gulp.watch('./src/client/**/*.js', ['js:client'])
 })
 
 /// /////////////////////////////////
@@ -147,4 +152,16 @@ gulp.task('html', function (done) {
 
 gulp.task('html:watch', function () {
   gulp.watch('./src/**/*.html', ['html'])
+})
+
+/// /////////////////////////////////
+// Assets
+/// /////////////////////////////////
+
+gulp.task('assets', function (done) {
+  gulp.src('./src/client/assets/**/*.*')
+    .pipe(gulp.dest('./dist/client/assets/'))
+
+  gulp.src('./src/client/styles/fonts/**/*.*')
+    .pipe(gulp.dest('./dist/client/fonts/'))
 })
