@@ -27478,10 +27478,6 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _navBar = require('./components/nav-bar');
-
-var _navBar2 = _interopRequireDefault(_navBar);
-
 var _auth = require('./pages/auth');
 
 var _auth2 = _interopRequireDefault(_auth);
@@ -27496,11 +27492,11 @@ var app = new _vue2.default({
   el: '#app',
   data: {
     message: 'Hello Vue',
-    loggedIn: false
+    loggedIn: true
   }
 });
 
-},{"./components/nav-bar":6,"./pages/auth":7,"./pages/home":8,"jquery":1,"medium-editor":2,"vue":4}],6:[function(require,module,exports){
+},{"./pages/auth":9,"./pages/home":10,"jquery":1,"medium-editor":2,"vue":4}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27513,7 +27509,7 @@ var _vue2 = _interopRequireDefault(_vue);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = '<nav class="nav has-shadow">\n  <div class="container">\n    <div class="nav-left">\n      <a class="nav-item">\n        <img src="assets/images/logo.png" alt="Bulma logo">\n      </a>\n      <a class="nav-item is-tab is-hidden-mobile is-active">Home</a>\n    </div>\n    <span class="nav-toggle">\n      <span></span>\n      <span></span>\n      <span></span>\n    </span>\n    <div class="nav-right nav-menu">\n      <span class="nav-item">\n        <a class="button is-primary">\n          <span class="icon">\n            <i class="material-icons">add</i>\n          </span>\n          <span>New Page</span>\n        </a>\n      </span>\n      <a class="nav-item is-tab">\n        <figure class="image is-16x16" style="margin-right: 8px;">\n          <img src="http://bulma.io/images/jgthms.png">\n        </figure>\n        Profile\n      </a>      \n      <a class="nav-item">        \n        <span class="icon">\n          <i class="material-icons left">exit_to_app</i>\n        </span>\n        <span>Log out</span>\n      </a>\n    </div>\n  </div>\n</nav>';
+var template = '<nav class="nav has-shadow">\n  <div class="container">\n    <div class="nav-left">\n      <a class="nav-item">\n        <img src="/assets/images/logo.png" alt="Company logo">\n      </a>\n      <a class="nav-item is-tab is-hidden-mobile is-active">Home</a>\n      <span class="nav-item">\n        <a class="button is-primary">\n          <span class="icon">\n            <i class="material-icons">add</i>\n          </span>\n          <span>New Page</span>\n        </a>\n      </span>\n    </div>\n    <span class="nav-toggle">\n      <span></span>\n      <span></span>\n      <span></span>\n    </span>\n    <div class="nav-right nav-menu">\n      <a class="nav-item is-tab is-hidden-tablet is-active">Home</a>\n      <a class="nav-item">\n        <span class="icon">\n          <i class="material-icons left">exit_to_app</i>\n        </span>\n        <span>Log out</span>\n      </a>\n    </div>\n  </div>\n</nav>';
 
 var navBar = _vue2.default.component('nav-bar', {
   props: [],
@@ -27535,14 +27531,42 @@ var _vue2 = _interopRequireDefault(_vue);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = '<div class="auth-wrapper">\n  <div class="columns auth-box">\n    <div class="column is-4-desktop is-offset-4-desktop is-10-mobile is-offset-1-mobile is-6-tablet is-offset-3-tablet">\n      <div class="card">\n        <div class="card-content">\n          <div class="content">\n            <label class="label">Name</label>\n            <p class="control">\n              <input class="input" type="text" placeholder="Text input">\n            </p>\n            <label class="label">Username</label>\n            <p class="control has-icon has-icon-right">\n              <input class="input is-success" type="text" placeholder="Text input" value="bulma">\n              <span class="icon is-small">\n                <i class="fa fa-check"></i>\n              </span>\n              <span class="help is-success">This username is available</span>\n            </p>\n            <label class="label">Email</label>\n            <p class="control has-icon has-icon-right">\n              <input class="input is-danger" type="text" placeholder="Email input" value="hello@">\n              <span class="icon is-small">\n                <i class="fa fa-warning"></i>\n              </span>\n              <span class="help is-danger">This email is invalid</span>\n            </p>\n            <small><a>Forgot password?</a></small>\n          </div>\n        </div>\n        <footer class="card-footer">\n          <a class="button is-black card-footer-item">Login</a>\n          <a class="button is-light card-footer-item">Register</a>\n        </footer>\n      </div>    \n    </div>\n  </div>\n</div>';
+var template = '<div class="box main-panel">\n  <ul class="collection page-list">\n    <li class="collection-item" v-for="page in pages">\n      <i class="material-icons left">assignment</i>\n      {{ page.name }}\n    </li>\n  </ul>\n</div>';
 
-var authPage = _vue2.default.component('auth-page', {
+var _data = {
+  pages: [{
+    '_id': '58c83435cd51b72ccd11a269',
+    'name': 'eiusmod dolore deserunt sunt eu'
+  }, {
+    '_id': '58c8343570a8e5361b4ebea1',
+    'name': 'laborum id excepteur ad officia'
+  }, {
+    '_id': '58c83435fbf43450da37fac7',
+    'name': 'commodo excepteur est cupidatat elit'
+  }, {
+    '_id': '58c834351d36c76f854217cf',
+    'name': 'officia aliqua incididunt consequat anim'
+  }, {
+    '_id': '58c83435783f9994c141dd22',
+    'name': 'adipisicing cupidatat pariatur cupidatat dolore'
+  }, {
+    '_id': '58c8343574865e4850da457a',
+    'name': 'labore dolore ipsum aliquip do'
+  }, {
+    '_id': '58c83435fff563127dd6f4ba',
+    'name': 'occaecat aliquip culpa veniam enim'
+  }]
+};
+
+var pageList = _vue2.default.component('page-list', {
   props: [],
-  template: template
+  template: template,
+  data: function data() {
+    return _data;
+  }
 });
 
-exports.default = authPage;
+exports.default = pageList;
 
 },{"vue":4}],8:[function(require,module,exports){
 'use strict';
@@ -27557,7 +27581,76 @@ var _vue2 = _interopRequireDefault(_vue);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var template = '<div>Home Page</div>';
+var template = '<div class="card">\n  <div class="card-content">\n    <aside class="menu">\n      <div v-for="c in menu">\n        <p class="menu-label">\n          {{ c.category }}\n        </p>\n        <ul class="menu-list">\n          <li v-for="item in c.items"><a>{{ item.name }}</a></li>\n        </ul>\n      </div>\n    </aside>\n  </div> \n</div>';
+
+var _data = {
+  menu: [{
+    category: 'General',
+    items: [{
+      name: 'Dashboard'
+    }, {
+      name: 'Customers'
+    }]
+  }, {
+    category: 'Administration',
+    items: [{
+      name: 'Team Settings'
+    }]
+  }]
+};
+
+var sideBar = _vue2.default.component('side-bar', {
+  props: [],
+  template: template,
+  data: function data() {
+    return _data;
+  }
+});
+
+exports.default = sideBar;
+
+},{"vue":4}],9:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _vue = require('vue');
+
+var _vue2 = _interopRequireDefault(_vue);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var template = '<div class="auth-wrapper">\n  <div class="columns auth-box">\n    <div class="column is-4-desktop is-offset-4-desktop is-10-mobile is-offset-1-mobile is-6-tablet is-offset-3-tablet">\n      <div class="card">\n        <div class="card-content">\n          <div class="content">\n            <label class="label">Name</label>\n            <p class="control">\n              <input class="input" type="text" placeholder="Text input">\n            </p>\n            <label class="label">Username</label>\n            <p class="control has-icon has-icon-right">\n              <input class="input is-success" type="text" placeholder="Text input" value="bulma">\n              <span class="icon is-small">\n                <i class="fa fa-check"></i>\n              </span>\n              <span class="help is-success">This username is available</span>\n            </p>\n            <label class="label">Email</label>\n            <p class="control has-icon has-icon-right">\n              <input class="input is-danger" type="text" placeholder="Email input" value="hello@">\n              <span class="icon is-small">\n                <i class="fa fa-warning"></i>\n              </span>\n              <span class="help is-danger">This email is invalid</span>\n            </p>\n            <small><a>Forgot password?</a></small>\n          </div>\n        </div>\n        <footer class="card-footer">\n          <a class="button is-black card-footer-item">Login</a>\n          <a class="button is-light card-footer-item">Register</a>\n        </footer>\n      </div>    \n    </div>\n  </div>\n</div>';
+
+var authPage = _vue2.default.component('auth-page', {
+  props: [],
+  template: template
+});
+
+exports.default = authPage;
+
+},{"vue":4}],10:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _vue = require('vue');
+
+var _vue2 = _interopRequireDefault(_vue);
+
+require('../components/nav-bar');
+
+require('../components/side-bar');
+
+require('../components/page-list');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var template = '<div>\n  <nav-bar></nav-bar>\n  <div class="container">\n    <div class="columns">\n      <div class="column is-narrow"><side-bar></side-bar></div>\n      <div class="column"><page-list></page-list></div>\n    </div>\n  </div>\n</div>';
 
 var homePage = _vue2.default.component('home-page', {
   props: [],
@@ -27566,4 +27659,4 @@ var homePage = _vue2.default.component('home-page', {
 
 exports.default = homePage;
 
-},{"vue":4}]},{},[5]);
+},{"../components/nav-bar":6,"../components/page-list":7,"../components/side-bar":8,"vue":4}]},{},[5]);
