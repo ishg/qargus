@@ -1,9 +1,5 @@
 import Vue from 'vue'
 
-$(document).ready(() => {
-  $('.collapsible').collapsible()
-})
-
 let template = `
 <div>
   <div class="card">
@@ -73,6 +69,9 @@ const sideBar = Vue.component('side-bar', {
   template: template,
   data: () => {
     return data
+  },
+  mounted () {
+    $('.collapsible').collapsible()
   }
 })
 

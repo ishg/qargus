@@ -15,18 +15,10 @@
 </head>
 <body>
   <div id="app">
-    <div v-if="writing">
-      <write-page></write-page>
-    </div>
-    <div v-if="!writing">
-      <div v-if="!loggedIn">
-        <auth-page></auth-page>
-      </div>
-      <div v-if="loggedIn">
-        <home-page></home-page>
-      </div>
-    </div>    
+    <nav-bar></nav-bar>
+    <router-view></router-view>
   </div>
   <script src="app.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </body>
 </html>
