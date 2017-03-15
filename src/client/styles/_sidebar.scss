@@ -1,0 +1,28 @@
+.side-menu {
+  border-radius: 0;
+  border-right: none;
+  border-left: none;
+    .collapsible-header {
+      i {
+        margin-right: 0;
+      }
+    }
+    .collapsible-body {
+      padding: 0;
+
+      .collection .collection-item.active {
+        @extend .blue, .lighten-1;
+        @extend .white-text;
+      }
+      
+      .collection {
+        border-radius: 0;
+        a.collection-item {
+          @extend .blue-text, .text-darken-2;
+        }
+        a.collection-item:hover {
+          @extend .blue-grey, .lighten-5;
+        }
+      }
+    }
+}

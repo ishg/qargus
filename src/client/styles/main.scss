@@ -1,46 +1,71 @@
+// Libraries
+@import '../../../node_modules/medium-editor/src/sass/medium-editor.scss';
+@import '../../../node_modules/medium-editor/src/sass/themes/beagle.scss';
+@import '../../../node_modules/materialize-css/sass/materialize.scss';
+
 //Overrides
 @import '_variables.scss';
 
-// Libraries
-@import '../../../node_modules/font-awesome/scss/font-awesome.scss';
-@import '../../../node_modules/bulma/bulma.sass';
-@import '../../../node_modules/medium-editor/src/sass/medium-editor.scss';
-@import '../../../node_modules/medium-editor/src/sass/themes/beagle.scss';
-@import '../../../node_modules/bulma/bulma.sass';
+.q-blue {
+  @extend .blue, .darken-1; 
+}
+
+.q-red {
+  @extend .red, .darken-3;
+}
+
+.q-green {
+  @extend .green, .darken-1;
+}
+
+.q-yellow {
+  @extend .amber;
+}
+
+/*
+.side-nav.fixed.right-aligned {
+  z-index: 99;
+  padding-top: 4rem;
+}
+
+.nav-wrapper {
+  z-index: 100 !important;
+}
+
+.userView {
+  text-align: right;
+}
+*/
+
+
+.z-depth-1, nav, .card-panel, .card, .collapsible, .side-nav {
+  box-shadow: none;
+}
+
+.card:first-child {
+  margin-top: 1rem;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.row:first-child {
+  margin-top: 0;
+}
+
+.btn-flat {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
 
 body {
   background: $body-background;
 }
 
+@import './_forms.scss';
 @import './_auth.scss';
+@import './_navbar.scss';
+@import './_sidebar.scss';
+@import './_page.scss';
 
 
-.icon{
-  .left {
-    margin-left: -0.5rem;
-    margin-right: 0.5rem;
-  }
-  .right {
-    margin-left: 0.5rem;
-    margin-right: -0.5rem;
-  }
-}
-
-.menu-label {
-  margin-top: 1rem;
-}
-
-.box {
-  border-radius: 3px;
-}
-
-.main-panel {
-  margin: 0 1rem 1rem 1rem;
-}
-
-// Desktop
-@media only screen and (min-width: 769px) {
-  .main-panel {
-    margin: 1.5rem 1.5rem 1.5rem 0;
-  }
-}

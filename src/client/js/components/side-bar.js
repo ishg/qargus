@@ -1,24 +1,52 @@
 import Vue from 'vue'
 
-let template = `<div class="card">
-  <div class="card-content">
-    <aside class="menu">
-      <div v-for="c in menu">
-        <p class="menu-label">
-          {{ c.category }}
-        </p>
-        <ul class="menu-list">
-          <li v-for="item in c.items"><a>{{ item.name }}</a></li>
-        </ul>
-      </div>
-    </aside>
-  </div> 
-</div>`
+$(document).ready(() => {
+  $('.collapsible').collapsible()
+})
+
+let template = `
+<div>
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Browse</span>
+    </div>
+    <ul class="collapsible side-menu" data-collapsible="expandable">
+      <li v-for="m in menu">
+        <div class="collapsible-header"><i class="material-icons right">{{m.icon}}</i>{{m.header}}</div>
+        <div class="collapsible-body">
+          <div class="collection">
+            <a href="#!" class="collection-item" v-for="item in m.items">
+              {{ item.name }}
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`
 
 let data = {
   menu: [
     {
-      category: 'General',
+      header: 'Teams',
+      icon: 'people_outline',
+      items: [
+        {
+          name: 'S&P'
+        },
+        {
+          name: 'DE'
+        },
+        {
+          name: 'AI'
+        }
+
+      ]
+    },
+    {
+      header: 'Categories',
+      icon: 'folder_open',
       items: [
         {
           name: 'Dashboard'
@@ -29,7 +57,8 @@ let data = {
       ]
     },
     {
-      category: 'Administration',
+      header: 'Tags',
+      icon: 'label_outline',
       items: [
         {
           name: 'Team Settings'

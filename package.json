@@ -31,6 +31,7 @@
     "jsonwebtoken": "^7.3.0",
     "knex": "^0.12.7",
     "lokijs": "^1.4.3",
+    "materialize-css": "^0.98.0",
     "medium-editor": "^5.23.0",
     "method-override": "^2.3.7",
     "mkdirp": "^0.5.1",

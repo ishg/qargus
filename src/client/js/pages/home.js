@@ -2,14 +2,16 @@ import Vue from 'vue'
 
 import '../components/nav-bar'
 import '../components/side-bar'
-import '../components/page-list'
+import '../components/main-panel'
 
 let template = `<div>
   <nav-bar></nav-bar>
-  <div class="container">
-    <div class="columns">
-      <div class="column is-narrow"><side-bar></side-bar></div>
-      <div class="column"><page-list></page-list></div>
+  <div class="row">
+    <div class="col s12 m8 l9">
+      <main-panel></main-panel>
+    </div>
+    <div class="col s12 m4 l3">
+      <side-bar></side-bar>
     </div>
   </div>
 </div>`

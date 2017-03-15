@@ -1,0 +1,107 @@
+$form-color: #42a5f5;
+
+/* label color */
+.input-field label {
+  color: $form-color;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: $form-color;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid $form-color;
+  box-shadow: 0 1px 0 0 $form-color;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid $form-color;
+  box-shadow: 0 1px 0 0 $form-color;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid $form-color;
+  box-shadow: 0 1px 0 0 $form-color;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: $form-color;
+}
+
+.editor {
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 1rem;
+  min-height: 15rem;
+  outline: none;
+}
+div.editor:focus {
+  border: 2px solid $form-color;
+}
+
+.chips {
+  .input {
+    width: 200px !important;
+  }
+  .chip.selected {
+    background-color: $form-color;
+  }
+}
+
+.chips.focus {
+  border-bottom: 1px solid $form-color;
+  box-shadow: 0 1px 0 0 $form-color;
+}
+
+.dropdown-content li > span {
+  color: $form-color;
+}
+
+.dropdown-content li:hover, .dropdown-content li.active, .dropdown-content li.selected {
+    @extend .blue-grey, .lighten-5
+}
+
+.dropdown-content {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+[type="checkbox"]:checked + label:before {
+    border-right: 2px solid $form-color;
+    border-bottom: 2px solid $form-color;
+    border-right: 2px solid $form-color;
+    border-bottom: 2px solid $form-color;
+}
+
+[type="checkbox"].filled-in:checked + label:after {
+    border: 2px solid $form-color;
+    background-color: $form-color;
+    top: 3px;
+}
+
+[type="checkbox"].filled-in:not(:checked)+label:after {
+  top: 3px;
+}
+
+[type="checkbox"].filled-in:checked + label:before {
+  top: 3px;
+}
+
+
+
+.switch label{
+  input[type=checkbox]:checked + .lever {
+    @extend .blue, .lighten-3;
+  }
+
+  input[type=checkbox]:checked + .lever:after {
+    background-color: $form-color;
+  }
+} 
+
+.input-field {
+  label:not(.label-icon).activey {
+    font-size: 0.8rem;
+    transform: translateY(-140%);
+  }
+}
+    

@@ -1,0 +1,11 @@
+.page-collection {
+  border-radius: 0;
+  border-right: none;
+  border-left: none;
+
+  .collection-item {
+    .collection-item-timestamp {
+      @extend .blue-grey-text, .text-lighten-2;
+    }  
+  }
+}

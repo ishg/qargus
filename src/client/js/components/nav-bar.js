@@ -1,37 +1,27 @@
 import Vue from 'vue'
 
-let template = `<nav class="nav has-shadow">
-  <div class="container">
-    <div class="nav-left">
-      <a class="nav-item">
-        <img src="/assets/images/logo.png" alt="Company logo">
-      </a>
-      <a class="nav-item is-tab is-hidden-mobile is-active">Home</a>
-      <span class="nav-item">
-        <a class="button is-primary">
-          <span class="icon">
-            <i class="material-icons">add</i>
-          </span>
-          <span>New Page</span>
-        </a>
-      </span>
+let template = `<nav>
+    <div class="nav-wrapper q-blue">
+      <a href="#" class="logo">Q</a>
+      <ul class="right">
+        <li>
+          <form id="search-box">
+            <div class="input-field">
+              <input id="search" placeholder="Search..." type="search" />
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            </div>
+          </form>
+        </li>
+        <li>
+          <a class="waves-effect waves-light btn pink darken-1 new-page-button">
+            <i class="material-icons left">add</i>
+            <i class="material-icons">description</i>
+          </a>
+        </li>
+        <li><a href="collapsible.html"><i class="material-icons">exit_to_app</i></a></li>
+      </ul>
     </div>
-    <span class="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div class="nav-right nav-menu">
-      <a class="nav-item is-tab is-hidden-tablet is-active">Home</a>
-      <a class="nav-item">
-        <span class="icon">
-          <i class="material-icons left">exit_to_app</i>
-        </span>
-        <span>Log out</span>
-      </a>
-    </div>
-  </div>
-</nav>`
+  </nav>`
 
 const navBar = Vue.component('nav-bar', {
   props: [],

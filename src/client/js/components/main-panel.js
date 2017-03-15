@@ -1,12 +1,22 @@
 import Vue from 'vue'
 
-let template = `<div class="box main-panel">
-  <ul class="collection page-list">
-    <li class="collection-item" v-for="page in pages">
-      <i class="material-icons left">assignment</i>
-      {{ page.name }}
-    </li>
-  </ul>
+let template = `<div class="main-panel">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Pages</span>
+    </div>
+    <ul class="collection page-collection">
+      <li class="collection-item avatar" v-for="page in pages">
+        <i class="material-icons circle blue">description</i>
+        <span class="title">{{ page.name }}</span>
+        <p>
+          Author
+          <br>
+          <span class="collection-item-timestamp">Timestamp</span>
+        </p>
+      </li>
+    </ul>
+  </div>
 </div>`
 
 let data = {
@@ -42,7 +52,7 @@ let data = {
   ]
 }
 
-const pageList = Vue.component('page-list', {
+const mainPanel = Vue.component('main-panel', {
   props: [],
   template: template,
   data: () => {
@@ -50,4 +60,4 @@ const pageList = Vue.component('page-list', {
   }
 })
 
-export default pageList
+export default mainPanel

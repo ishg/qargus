@@ -1,14 +1,14 @@
 import Vue from 'vue'
-import MediumEditor from 'medium-editor'
-import $ from 'jquery'
 
-import authPage from './pages/auth'
-import homePage from './pages/home'
+import './pages/auth'
+import './pages/home'
+import './pages/write'
 
 let app = new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue',
-    loggedIn: true
+    loggedIn: true,
+    writing: true
   }
 })
