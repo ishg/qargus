@@ -13,21 +13,43 @@
 }
 
 .auth-box {
-  margin-top: 10rem;
 
-  .card {
-    .card-header{
-      .card-header-title {
-        text-align: center;    
-      }
-    }
-    .card-footer {
-      .button {
-        border-radius: 0px;
-      }
-    }
-    .card-footer-item:not(:last-child) {
-      border-right: none;
-    }
+}
+
+.auth-logo {
+  text-align: center;
+  @extend .blue-text;
+
+  h1 {
+    font-size: 9rem;
+  }
+}
+
+.tabs .tab {
+  a {
+    color: #b0bec5;
+  }
+  
+  a.active {
+    background-color: transparent;
+    color: $form-color;
+    font-weight: 600;
+  }
+  a:hover {
+    color: $form-color;
+  } 
+}
+
+.tabs {
+  .indicator {
+    background-color: $form-color;
+  }
+}
+
+.forgot-password {
+  text-align: right;
+  a {
+    font-style: italic;
+    font-size: 0.85rem;
   }
 }
