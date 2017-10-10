@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ishg/qargus#readme",
   "dependencies": {
     "async": "^2.1.5",
+    "axios": "^0.15.3",
     "babelify": "^7.3.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",

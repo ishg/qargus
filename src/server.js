@@ -9,6 +9,12 @@ import path from 'path'
 import constants from './constants'
 import logger from './util/logger'
 
+// API
+import pages from './routes/pages'
+import Page from './dao/page'
+
+const page = new Page()
+
 // Configuration
 const app = express()
 app.use(express.static(path.join(__dirname, 'client')))
@@ -17,7 +23,7 @@ app.use(bodyParser.urlencoded({ 'extended': 'true' }))
 app.use(bodyParser.json())
 app.use(methodOverride())
 
-// Api
+app.use('/api', pages)
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT)
